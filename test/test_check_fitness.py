@@ -1,5 +1,5 @@
 import pytest
-from src.check_fitness import calculate_individual_fitness
+from src.check_fitness import check_fitness
 
 
 @pytest.mark.parametrize(
@@ -14,5 +14,5 @@ from src.check_fitness import calculate_individual_fitness
 
 )
 
-def test_calculate_individual_fitness(peg_pattern, chosen_pegs, score):
-    assert calculate_individual_fitness(peg_pattern, chosen_pegs) == score
+def test_check_fitness(peg_pattern, chosen_pegs, score):
+    assert check_fitness(peg_pattern, chosen_pegs) == score
