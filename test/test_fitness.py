@@ -14,4 +14,4 @@ from src.fitness import calculate_individual_fitness
 )
 
 def test_calculate_individual_fitness(peg_pattern, chosen_pegs, score):
-    assert calculate_individual_fitness(1, peg_pattern, chosen_pegs) == score
+    assert calculate_individual_fitness(peg_pattern, chosen_pegs) == score
