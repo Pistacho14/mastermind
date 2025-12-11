@@ -10,5 +10,5 @@ def calculate_individual_fitness(peg_pattern, chosen_pegs):
             score += KEY_PEG_RED
         else:
             score += KEY_PEG_WHITE
-    
+
     return score
