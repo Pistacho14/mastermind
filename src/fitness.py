@@ -1,14 +1,14 @@
-def calculate_individual_fitness(individual, peg_pattern, chosen_pegs):
+def calculate_individual_fitness(peg_pattern, chosen_pegs):
 
     KEY_PEG_RED = 10
     KEY_PEG_WHITE = 5
     score = 0
-    for peg in peg_pattern:
-        chosen = [i for i, x in enumerate(chosen_pegs) if x == peg]
-        if chosen == []:
+    for peg, peg_choose in zip(peg_pattern, chosen_pegs):
+        if peg != peg_choose:
             continue
-        elif peg_pattern.index(peg) in chosen:
+        elif peg == peg_choose:
             score += KEY_PEG_RED
         else:
-            score += KEY_PEG_WHITE * len(chosen)
+            score += KEY_PEG_WHITE
+    
     return score
