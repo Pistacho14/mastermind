@@ -1,4 +1,4 @@
-def calculate_individual_fitness(peg_pattern, chosen_pegs):
+def check_fitness(peg_pattern, chosen_pegs):
 
     KEY_PEG_RED = 10
     KEY_PEG_WHITE = 5

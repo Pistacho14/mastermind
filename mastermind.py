@@ -1,5 +1,5 @@
 from src.peg_pattern_generator import peg_pattern_generator
-from src.first_gen_generator import first_population_generator
+from src.first_population_generator import first_population_generator
 
 
 secret_code = peg_pattern_generator()
