@@ -1,6 +1,5 @@
-def population_sorter(individual, fitness_score):
+def fitness_rank_assigner(individual, fitness_score, sorted_population):
 
-    sorted_population = {'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': []}
     if fitness_score <= 10:
         sorted_population['F'].append(individual)
     elif fitness_score <= 20:
