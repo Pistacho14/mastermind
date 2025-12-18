@@ -3,7 +3,7 @@ import random
 
 def roulette_selection(population_sorted):
     reproducible_population = population_sorted.copy()
-    weights = {'A': 0, 'B': 5, 'C': 10, 'D': 15, 'E': 20}
+    weights = {'A': 0, 'B': 2, 'C': 10, 'D': 25, 'E': 35}
     valid_ranking = []
     valid_weights = []
     individuals_eliminated = []
@@ -30,4 +30,4 @@ def roulette_selection(population_sorted):
         if ranking not in valid_ranking or ranking in individuals_eliminated:
             del reproducible_population[ranking]
 
-    return reproducible_population
+    return list(reproducible_population.values())
