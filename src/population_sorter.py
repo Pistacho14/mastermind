@@ -5,6 +5,6 @@ def population_sorter(population, secret_code):
 
     sorted_population = {'A': [], 'B': [], 'C': [], 'D': [], 'E': []}
     for individual in list(population.keys()):
-        fitness = check_fitness(population.get(individual), secret_code)
-        fitness_rank_assigner(individual, fitness, sorted_population)
+        fitness_score = check_fitness(population.get(individual), secret_code)
+        sorted_population = fitness_rank_assigner(individual, fitness_score, sorted_population)
     return sorted_population
