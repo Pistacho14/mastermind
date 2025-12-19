@@ -2,22 +2,22 @@ def check_fitness(peg_pattern, chosen_pegs):
 
     KEY_PEG_RED = 10
     KEY_PEG_WHITE = 5
-    score = 0
-    pegs_remaining = []
+    fitness_score = 0
+    remaining_pegs = []
     chosen_pegs_remaining = []
 
     for peg, peg_choose in zip(peg_pattern, chosen_pegs):
         if peg == peg_choose:
-            score += KEY_PEG_RED
+            fitness_score += KEY_PEG_RED
         else:
-            pegs_remaining.append(peg)
+            remaining_pegs.append(peg)
             chosen_pegs_remaining.append(peg_choose)
 
-    for peg2 in pegs_remaining:
-        if peg2 in chosen_pegs_remaining:
-            score += KEY_PEG_WHITE
-            chosen_pegs_remaining.remove(peg2)
+    for peg in remaining_pegs:
+        if peg in chosen_pegs_remaining:
+            fitness_score += KEY_PEG_WHITE
+            chosen_pegs_remaining.remove(peg)
         else:
             continue
 
-    return score
+    return fitness_score
