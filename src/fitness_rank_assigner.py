@@ -1,14 +1,14 @@
-def fitness_rank_assigner(individual, fitness_score, expected_rank):
+def fitness_rank_assigner(individual, fitness_score, sorted_population):
 
     if fitness_score <= 10:
-        expected_rank['E'].append(individual)
+        sorted_population['E'].append(individual)
     elif fitness_score <= 20:
-        expected_rank['D'].append(individual)
+        sorted_population['D'].append(individual)
     elif fitness_score <= 25:
-        expected_rank['C'].append(individual)
+        sorted_population['C'].append(individual)
     elif fitness_score <= 30:
-        expected_rank['B'].append(individual)
+        sorted_population['B'].append(individual)
     else:
-        expected_rank['A'].append(individual)
+        sorted_population['A'].append(individual)
 
-    return expected_rank
+    return sorted_population
