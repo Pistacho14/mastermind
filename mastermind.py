@@ -4,26 +4,35 @@ from src.offspring_generator import offspring_generator
 from src.check_winner import check_winner
 from src.population_sorter import population_sorter
 from src.roulette_selection import roulette_selection
+from src.print_colours import print_colours
 
 def mastermind():
     secret_code = peg_pattern_generator()
-    current_population = first_population_generator(75)
-    is_found = False
-    turn = 1
+    current_population = first_population_generator(100)
+    turn = 0
+    MAX_TURNS = 14
 
-    if check_winner(population_sorter(current_population.copy(), secret_code)):
-        return print("Has ganado!")
+    while turn < MAX_TURNS:
+        sorted_population = population_sorter(current_population, secret_code)
 
-    while not is_found and turn < 14:
-        current_population = offspring_generator(roulette_selection(population_sorter(current_population, secret_code)))
-        is_found = check_winner(population_sorter(current_population.copy(), secret_code))
+        for rank in ['A', 'B', 'C', 'D', 'E']:
+            if sorted_population[rank]:
+                print(f"Turno {turn + 1}: ", end="")
+                print_colours(sorted_population[rank][0])
+                break
+
+        if check_winner(sorted_population):
+            print("Has ganado en el turno", turn + 1)
+            print("Código secreto:")
+            print_colours(secret_code)
+            return
+
+        current_population = offspring_generator(roulette_selection(sorted_population))
         turn += 1
-        print(turn)
 
-    if turn == 14:
-        return print("Probablemente hayas perdido, o no, ni idea")
-    else:
-        return print("Has ganado en el turno" + " " + str(turn))
+    print("Pal lobby campeón")
+    print("Código secreto:")
+    print_colours(secret_code)
 
 if __name__ == "__main__":
     mastermind()
