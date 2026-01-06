@@ -2,9 +2,11 @@ import pytest
 from src.mutation import mutation
 
 @pytest.mark.parametrize(
-    '''individuo, 
+    '''
+    individuo, 
     probabilidad_de_mutar, 
-    colores''',
+    colores
+    ''',
     [
         (
          ['Red', 'Red', 'Yellow', 'Yellow'],
