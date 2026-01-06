@@ -20,7 +20,19 @@ dict1 = {
         (
          dict1,
          ['Green', 'Yellow', 'Red', 'Cyan'],
-         {'A': [],'B': [],'C': [1],'D': [2, 3, 4, 5, 6, 7, 8, 9, 10],'E': []}
+         {'A': [],
+          'B': [],
+          'C': [['Red', 'Green', 'Yellow', 'Cyan']],
+          'D': [['Purple', 'Orange', 'Red', 'Green'],
+                ['Yellow', 'Yellow', 'Cyan', 'Purple'],
+                ['Green', 'Red', 'Orange', 'Orange'],
+                ['Cyan', 'Purple', 'Green', 'Red'],
+                ['Orange', 'Yellow', 'Red', 'Purple'],
+                ['Green', 'Green', 'Cyan', 'Yellow'],
+                ['Purple', 'Red', 'Orange', 'Cyan'],
+                ['Yellow', 'Green', 'Purple', 'Red'],
+                ['Orange', 'Cyan', 'Yellow', 'Green']],
+          'E': []}
         ),
     ],
 )
