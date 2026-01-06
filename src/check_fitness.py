@@ -1,7 +1,7 @@
+from .contants import KEY_PEG_RED, KEY_PEG_WHITE 
+
 def check_fitness(peg_pattern, chosen_pegs):
 
-    KEY_PEG_RED = 10
-    KEY_PEG_WHITE = 5
     fitness_score = 0
     remaining_pegs = []
     chosen_pegs_remaining = []
