@@ -1,7 +1,7 @@
 import pytest
 from src.population_mixer import population_mixer
 
-@pytest.mark.parametrize('current_population, secret_code, offspring, population_sorted, length_population',
+@pytest.mark.parametrize('current_population, secret_code, offspring, length_population',
                          [
                              (
                                 {
@@ -18,16 +18,10 @@ from src.population_mixer import population_mixer
                                 102: ['Cyan','Cyan','Yellow','Green'],
                                 103: ['Orange','Purple','Red','Green'],
                                 },
-                                {
-                                'B': [2, 3],
-                                'C': [4, 5],
-                                'D': [6],
-                                'E': [1]
-                                },
                                 6
                              ),
                          ],
                         )
 
-def test_population_mixer(current_population, secret_code, offspring, population_sorted, length_population):
-    assert len(population_mixer(current_population, secret_code, offspring, population_sorted)) == length_population
+def test_population_mixer(current_population, secret_code, offspring, length_population):
+    assert len(population_mixer(current_population, secret_code, offspring)) == length_population
