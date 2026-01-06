@@ -1,14 +1,18 @@
 def fitness_rank_assigner(individual, fitness_score, sorted_population):
+    ranks = [
+        (0, 'H'),
+        (5, 'G'),
+        (10, 'F'),
+        (15, 'E'),
+        (20, 'D'),
+        (25, 'C'),
+        (30, 'B'),
+        (float('inf'), 'A'),
+    ]
 
-    if fitness_score <= 10:
-        sorted_population['E'].append(individual)
-    elif fitness_score <= 20:
-        sorted_population['D'].append(individual)
-    elif fitness_score <= 25:
-        sorted_population['C'].append(individual)
-    elif fitness_score <= 30:
-        sorted_population['B'].append(individual)
-    else:
-        sorted_population['A'].append(individual)
+    for limit, rank in ranks:
+        if fitness_score <= limit:
+            sorted_population[rank].append(individual)
+            break
 
     return sorted_population
