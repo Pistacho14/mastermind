@@ -1,25 +1,20 @@
 import random
-from .contants import WEIGHTS, EXPLOTATION_PERCENTAGE
+from .contants import WEIGHTS, MAX_OFFSPRING
 
 
-def roulette_selection(population_sorted):
-    population_sorted = population_sorted.copy()
-    individual_reproducible = []
-    individuals_weights = []
-    reproducible_population = {}
-    counter = 1
+def roulette_selection(ranked_population):
+    individuals = []
+    weights = []
 
-    for ranking, individuals in population_sorted.items():
-        for individual in individuals:
-            individual_reproducible.append(individual)
-            individuals_weights.append(WEIGHTS[ranking])
+    for rank, population in ranked_population.items():
+        for genes in population:
+            individuals.append(genes)
+            weights.append(WEIGHTS[rank])
 
-    while len(reproducible_population) < EXPLOTATION_PERCENTAGE:
-        selected_individual = random.choices(
-            individual_reproducible, weights=individuals_weights
-        )[0]
+    selected_individuals = []
 
-        reproducible_population[counter] = selected_individual.copy()
-        counter += 1
+    while len(selected_individuals) < MAX_OFFSPRING:
+        selected_individual = random.choices(individuals, weights=weights)[0]
+        selected_individuals.append(selected_individual.copy())
 
-    return list(reproducible_population.values())
+    return selected_individuals
