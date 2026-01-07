@@ -1,12 +1,12 @@
 import random
-from .contants import MUTATION_CHANCE, COLORS
+from .contants import MUTATION_CHANCE, ALLELS
 
-def mutation(individual, MUTATION_CHANCE, COLORS):
-    individual = individual.copy()
+
+def mutation(child):
     for i in range(4):
         if random.random() < MUTATION_CHANCE:
-            nuevo = random.choice(COLORS)
-            while nuevo == individual[i]:
-                nuevo = random.choice(COLORS)
-            individual[i] = nuevo
-    return individual
+            mutated_allel = random.choice(ALLELS)
+            while mutated_allel == child[i]:
+                mutated_allel = random.choice(ALLELS)
+            child[i] = mutated_allel
+    return child
