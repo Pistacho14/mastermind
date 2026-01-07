@@ -1,22 +1,22 @@
-from .contants import KEY_PEG_RED, KEY_PEG_WHITE 
+from .contants import KEY_PEG_RED, KEY_PEG_WHITE
 
-def check_fitness(peg_pattern, chosen_pegs):
 
+def check_fitness(genes, secret_code):
     fitness_score = 0
-    remaining_pegs = []
-    chosen_pegs_remaining = []
+    remaining_allels = []
+    secret_code_remaining = []
 
-    for peg, peg_choose in zip(peg_pattern, chosen_pegs):
-        if peg == peg_choose:
+    for allel, chosen_allel in zip(genes, secret_code):
+        if allel == chosen_allel:
             fitness_score += KEY_PEG_RED
         else:
-            remaining_pegs.append(peg)
-            chosen_pegs_remaining.append(peg_choose)
+            remaining_allels.append(allel)
+            secret_code_remaining.append(chosen_allel)
 
-    for peg in remaining_pegs:
-        if peg in chosen_pegs_remaining:
+    for allel in remaining_allels:
+        if allel in secret_code_remaining:
             fitness_score += KEY_PEG_WHITE
-            chosen_pegs_remaining.remove(peg)
+            secret_code_remaining.remove(allel)
         else:
             continue
 
