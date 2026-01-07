@@ -1,19 +1,50 @@
 import pytest
-from src.population_sorter import population_sorter
+from src.population.population_sorter import population_sorter
+
+dict1 = {
+    1: ["Red", "Green", "Yellow", "Cyan"],
+    2: ["Purple", "Orange", "Red", "Green"],
+    3: ["Yellow", "Yellow", "Cyan", "Purple"],
+    4: ["Green", "Red", "Orange", "Orange"],
+    5: ["Cyan", "Purple", "Green", "Red"],
+    6: ["Orange", "Yellow", "Red", "Purple"],
+    7: ["Green", "Green", "Cyan", "Yellow"],
+    8: ["Purple", "Red", "Orange", "Cyan"],
+    9: ["Yellow", "Green", "Purple", "Red"],
+    10: ["Orange", "Cyan", "Yellow", "Green"]
+}
+
 
 @pytest.mark.parametrize(
-    'individual,fitness_score,sorted_population',
+    "population, secret_code, sorted_population",
     [
-        (1, 35, {'A': [], 'B': [1], 'C': [], 'D': [], 'E': [], 'F': []}),
-        (2, 10, {'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': [2]}),
-        (3, 20, {'A': [], 'B': [], 'C': [], 'D': [], 'E': [3], 'F': []}),
-        (4, 0,  {'A': [], 'B': [], 'C': [], 'D': [], 'E': [], 'F': [4]}),
-        (5, 30, {'A': [], 'B': [], 'C': [5], 'D': [], 'E': [], 'F': []}),
-        (6, 25, {'A': [], 'B': [], 'C': [], 'D': [6], 'E': [], 'F': []}),
-        (7, 15, {'A': [], 'B': [], 'C': [], 'D': [], 'E': [7], 'F': []}),
-        (8, 40, {'A': [8], 'B': [], 'C': [], 'D': [], 'E': [], 'F': []}),
+        (
+            dict1,
+            ["Green", "Red", "Purple", "Cyan"],
+            {
+                "A": [],
+                "B": [],
+                "C": [["Purple", "Red", "Orange", "Cyan"]],
+                "D": [
+                    ["Red", "Green", "Yellow", "Cyan"],
+                    ["Green", "Red", "Orange", "Orange"],
+                    ["Cyan", "Purple", "Green", "Red"],
+                    ["Yellow", "Green", "Purple", "Red"],
+                ],
+                "E": [
+                    ["Purple", "Orange", "Red", "Green"],
+                    ["Green", "Green", "Cyan", "Yellow"],
+                ],
+                "F": [
+                    ["Yellow", "Yellow", "Cyan", "Purple"],
+                    ["Orange", "Yellow", "Red", "Purple"],
+                    ["Orange", "Cyan", "Yellow", "Green"],
+                ],
+                "G":[],
+                "H": [],
+            },
+        ),
     ],
 )
-
-def test_population_sorter(individual, fitness_score, sorted_population):
-    assert population_sorter(individual, fitness_score) == sorted_population
+def test_population_sorter(population, secret_code, sorted_population):
+    assert population_sorter(population, secret_code) == sorted_population
