@@ -35,10 +35,10 @@ losses = results.count(LOSS_VALUE)
 avg_turn = sum(results) / len(results)
 win_rate = len(wins) / NUM_RUNS * 100
 
-print(f"Victorias: {len(wins)} / {NUM_RUNS}")
-print(f"Derrotas: {losses}")
+print(f"Victories: {len(wins)} / {NUM_RUNS}")
+print(f"Defeats: {losses}")
 print(f"Win rate: {win_rate:.2f}%")
-print(f"Turno medio (incluyendo derrotas): {avg_turn:.2f}")
+print(f"Turn average (includes defeats): {avg_turn:.2f}")
 
 # 📈 Gráfica 1: Histograma de resultados (100 ejecuciones)
 plt.figure()
@@ -47,9 +47,9 @@ plt.hist(
     bins=range(1, LOSS_VALUE + 2),
     align="left"
 )
-plt.xlabel("Turno (15 = derrota)")
-plt.ylabel("Número de partidas")
-plt.title("Resultados de Mastermind (100 ejecuciones)")
+plt.xlabel("Turn (15 = defeat)")
+plt.ylabel("Number of games")
+plt.title("Mastermind results (100 executions)")
 plt.xticks(range(1, LOSS_VALUE + 1))
 plt.grid(True)
 
@@ -71,9 +71,9 @@ plt.plot(
     range(1, len(avg_fitness_per_generation) + 1),
     avg_fitness_per_generation
 )
-plt.xlabel("Generación")
-plt.ylabel("Fitness medio")
-plt.title("Evolución del fitness medio por generación (100 ejecuciones)")
+plt.xlabel("Generation")
+plt.ylabel("Average fitness")
+plt.title("Evolution of average fitness (100 executions)")
 plt.grid(True)
 
 plt.show()
