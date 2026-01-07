@@ -1,5 +1,5 @@
 from src.roulette_selection import roulette_selection
-from src.contants import EXPLOTATION_PERCENTAGE
+from src.contants import MAX_OFFSPRING
 
 
 def test_roulette_selection():
@@ -121,5 +121,5 @@ def test_roulette_selection():
                 }
             )
         )
-        == EXPLOTATION_PERCENTAGE
+        == MAX_OFFSPRING
     )
