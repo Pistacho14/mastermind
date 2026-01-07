@@ -1,16 +1,68 @@
 import pytest
 from src.check_winner import check_winner
 
-@pytest.mark.parametrize(
-    'population, expected_return',
-    [
-        ({'A': [1],'B': [],'C': [],'D': [],'E': [],}, True),
-        ({'A': [],'B': [1, 2, 3, 4],'C': [],'D': [5],'E': [],}, False),
-        ({'A': [],'B': [],'C': [1, 2],'D': [3, 4],'E': [5, 6],}, False),
-        ({'A': [],'B': [],'C': [],'D': [],'E': [],}, False),
 
+@pytest.mark.parametrize(
+    "population, expected_return",
+    [
+        (
+            {
+                "A": [["Purple", "Purple", "Orange", "Orange"]],
+                "B": [],
+                "C": [],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [],
+                "H": [],
+            },
+            True,
+        ),
+        (
+            {
+                "A": [],
+                "B": [
+                    ["Orange", "Orange", "Red", "Cyan"],
+                    ["Purple", "Purple", "Orange", "Yellow"],
+                    ["Purple", "Purple", "Yellow", "Red"],
+                    ['Purple', 'Purple', 'Yellow', 'Purple'],
+                ],
+                "C": [],
+                "D": [['Purple', 'Orange', 'Purple', 'Purple']],
+                "E": [],
+                "F": [],
+                "G": [],
+                "H": [],
+            },
+            False,
+        ),
+        (
+            {
+                "A": [],
+                "B": [],
+                "C": [['Cyan', 'Green', 'Orange', 'Orange'], ['Purple', 'Orange', 'Purple', 'Purple']],
+                "D": [['Yellow', 'Purple', 'Orange', 'Yellow'], ['Red', 'Cyan', 'Yellow', 'Red']],
+                "E": [['Purple', 'Yellow', 'Yellow', 'Red'], ['Purple', 'Orange', 'Purple', 'Green']],
+                "F": [],
+                "G": [],
+                "H": [],
+            },
+            False,
+        ),
+        (
+            {
+                "A": [],
+                "B": [],
+                "C": [],
+                "D": [],
+                "E": [],
+                "F": [],
+                "G": [],
+                "H": [],
+            },
+            False,
+        ),
     ],
 )
-
 def test_check_winner(population, expected_return):
     assert check_winner(population) == expected_return
