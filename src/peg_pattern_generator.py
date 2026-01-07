@@ -1,11 +1,10 @@
 import random
+from .contants import ALLELS
 
-def peg_pattern_generator():
-
-    pegs = ['Red','Cyan','Yellow', 'Purple', 'Green', 'Orange']
-    peg_pattern = []
+def genes_generator():
+    genes_pattern = []
     for _ in range(4):
-        peg_pattern.append(random.choice(pegs))
+        genes_pattern.append(random.choice(ALLELS))
 
-    assert isinstance(peg_pattern,list)
-    return peg_pattern
+    assert isinstance(genes_pattern, list)
+    return genes_pattern
