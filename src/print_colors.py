@@ -1,5 +1,7 @@
 from .contants import COLOR_CIRCLE
 
-def print_colors(peg_pattern):
-    for color in peg_pattern:
-        print(COLOR_CIRCLE.get(color), end=" ")
+
+def print_colors(genes):
+    for allel in genes:
+        print(COLOR_CIRCLE.get(allel), end=" ")
+    print()
