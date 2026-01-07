@@ -1,5 +1,5 @@
 import pytest
-from src.population_mixer import population_mixer
+from src.population.population_mixer import population_mixer
 
 
 @pytest.mark.parametrize(

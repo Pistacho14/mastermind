@@ -1,5 +1,5 @@
 import pytest
-from src.check_winner import check_winner
+from src.utils.check_winner import check_winner
 
 
 @pytest.mark.parametrize(

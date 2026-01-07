@@ -1,5 +1,5 @@
 import pytest
-from src.mutation import mutation
+from src.genetics.mutation import mutation
 
 
 @pytest.mark.parametrize(

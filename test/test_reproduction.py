@@ -1,5 +1,5 @@
 import pytest
-from src.reproduction import reproduction
+from src.genetics.reproduction import reproduction
 
 
 @pytest.mark.parametrize(

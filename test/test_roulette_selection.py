@@ -1,5 +1,5 @@
-from src.roulette_selection import roulette_selection
-from src.contants import MAX_OFFSPRING
+from src.genetics.roulette_selection import roulette_selection
+from src.utils.constants import MAX_OFFSPRING
 
 
 def test_roulette_selection():

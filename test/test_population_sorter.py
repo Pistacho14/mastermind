@@ -1,5 +1,5 @@
 import pytest
-from src.population_sorter import population_sorter
+from src.population.population_sorter import population_sorter
 
 dict1 = {
     1: ["Red", "Green", "Yellow", "Cyan"],

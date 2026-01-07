@@ -1,5 +1,5 @@
 import pytest
-from src.check_fitness import check_fitness
+from src.utils.check_fitness import check_fitness
 
 
 @pytest.mark.parametrize(

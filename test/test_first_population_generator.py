@@ -1,4 +1,4 @@
-from src.first_population_generator import initial_population_generator
+from src.population.initial_population_generator import initial_population_generator
 
 
 def test_length_first_population():

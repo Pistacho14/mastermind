@@ -1,5 +1,5 @@
 import pytest
-from src.offspring_generator import offspring_generator
+from src.genetics.offspring_generator import offspring_generator
 
 
 @pytest.mark.parametrize(

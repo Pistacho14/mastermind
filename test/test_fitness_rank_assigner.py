@@ -1,5 +1,5 @@
 import pytest
-from src.fitness_rank_assigner import fitness_rank_assigner
+from src.population.fitness_rank_assigner import fitness_rank_assigner
 
 
 @pytest.mark.parametrize(
