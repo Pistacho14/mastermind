@@ -1,7 +1,5 @@
-def check_winner(population):
-
-    winners = population.get('A')
+def check_winner(current_population):
+    winners = current_population.get("A")
     if winners != []:
         return True
-
     return False
