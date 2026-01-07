@@ -1,6 +1,6 @@
 import random
 from .population_sorter import population_sorter
-from .contants import WEIGHTS
+from src.utils.constants import WEIGHTS
 
 
 def population_mixer(current_population, secret_code, offspring):

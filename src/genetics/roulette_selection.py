@@ -1,5 +1,5 @@
 import random
-from .contants import WEIGHTS, MAX_OFFSPRING
+from src.utils.constants import WEIGHTS, MAX_OFFSPRING
 
 
 def roulette_selection(ranked_population):

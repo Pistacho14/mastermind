@@ -1,5 +1,5 @@
 import random
-from .contants import MUTATION_CHANCE, ALLELS
+from src.utils.constants import MUTATION_CHANCE, ALLELS
 
 
 def mutation(child):

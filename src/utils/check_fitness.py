@@ -1,4 +1,4 @@
-from .contants import KEY_PEG_RED, KEY_PEG_WHITE
+from .constants import KEY_PEG_RED, KEY_PEG_WHITE
 
 
 def check_fitness(genes, secret_code):

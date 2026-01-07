@@ -1,5 +1,5 @@
 import random
-from .contants import ALLELS
+from src.utils.constants import ALLELS
 
 def genes_generator():
     genes_pattern = []

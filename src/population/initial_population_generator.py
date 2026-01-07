@@ -1,5 +1,5 @@
-from .peg_pattern_generator import genes_generator
-from .contants import POPULATION_SIZE
+from src.genetics.genes_generator import genes_generator
+from src.utils.constants import POPULATION_SIZE
 
 
 def initial_population_generator():

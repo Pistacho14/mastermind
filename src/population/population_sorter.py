@@ -1,4 +1,4 @@
-from .check_fitness import check_fitness
+from src.utils.check_fitness import check_fitness
 from .fitness_rank_assigner import fitness_rank_assigner
 
 

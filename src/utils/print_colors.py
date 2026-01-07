@@ -1,4 +1,4 @@
-from .contants import COLOR_CIRCLE
+from .constants import COLOR_CIRCLE
 
 
 def print_colors(genes):
