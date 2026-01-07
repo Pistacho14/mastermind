@@ -1,4 +1,5 @@
-from src.peg_pattern_generator import peg_pattern_generator
+from src.peg_pattern_generator import genes_generator
+
 
 def test_lenght_peg_patter():
-    assert len(peg_pattern_generator()) == 4
+    assert len(genes_generator()) == 4
