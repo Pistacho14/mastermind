@@ -1,8 +1,9 @@
-from .peg_pattern_generator import peg_pattern_generator
+from .peg_pattern_generator import genes_generator
+from .contants import POPULATION_SIZE
 
-def first_population_generator(population):
 
-    first_population = {}
-    for individuo in range(1, population + 1):
-        first_population[individuo] = peg_pattern_generator()
-    return first_population
+def initial_population_generator():
+    initial_population = {}
+    for individual in range(1, POPULATION_SIZE + 1):
+        initial_population[individual] = genes_generator()
+    return initial_population
