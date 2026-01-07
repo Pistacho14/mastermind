@@ -1,26 +1,14 @@
 import pytest
 from src.mutation import mutation
 
-@pytest.mark.parametrize(
-    '''
-    individuo, 
-    probabilidad_de_mutar, 
-    colores
-    ''',
-    [
-        (
-         ['Red', 'Red', 'Yellow', 'Yellow'],
-         1,
-         ['Red','Cyan','Yellow', 'Purple', 'Green', 'Orange'],
-        ),
-        (
-         ['Cyan', 'Purple', 'Orange', 'Yellow'],
-         1,
-         ['Red','Cyan','Yellow', 'Purple', 'Green', 'Orange']
 
-        ),
+@pytest.mark.parametrize(
+    "individuo",
+    [
+        ["Red", "Red", "Yellow", "Yellow"],
+        ["Cyan", "Purple", "Orange", "Yellow"],
     ],
 )
-
-def test_mutation(individuo, probabilidad_de_mutar, colores):
-    assert mutation(individuo, probabilidad_de_mutar, colores) != individuo
+def test_mutation(individuo):
+    copia_individuo = individuo.copy()
+    assert mutation(individuo) != copia_individuo
