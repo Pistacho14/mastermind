@@ -4,27 +4,25 @@ from .contants import WEIGHTS
 
 
 def population_mixer(current_population, secret_code, offspring):
-    next_gen_patterns = [p.copy() for p in offspring.values()]
-    next_gen = {}
+    new_generation = {}
+    current_population_candidates = []
+    current_population_weights = []
 
-    actual_population_candidates = []
-    actual_population_weights = []
-
-    for ranking, individuals in population_sorter(
-        current_population, secret_code
-    ).items():
+    for rank, individuals in population_sorter(current_population, secret_code).items():
         for individual in individuals:
-            actual_population_candidates.append(individual)
-            actual_population_weights.append(WEIGHTS[ranking])
+            current_population_candidates.append(individual)
+            current_population_weights.append(WEIGHTS[rank])
 
-    while len(next_gen_patterns) < len(current_population):
-        selected = random.choices(
-            actual_population_candidates, weights=actual_population_weights
+    new_generation_genes = list(offspring.values())
+
+    while len(new_generation_genes) < len(current_population):
+        selected_genes = random.choices(
+            current_population_candidates, weights=current_population_weights
         )[0]
 
-        next_gen_patterns.append(selected.copy())
+        new_generation_genes.append(selected_genes)
 
-    for individual_id, peg_pattern in enumerate(next_gen_patterns, start=1):
-        next_gen[individual_id] = peg_pattern
+    for individual_id, genes in enumerate(new_generation_genes, start=1):
+        new_generation[individual_id] = genes
 
-    return next_gen
+    return new_generation
