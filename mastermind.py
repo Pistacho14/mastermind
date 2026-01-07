@@ -1,12 +1,12 @@
-from src.peg_pattern_generator import genes_generator
-from src.first_population_generator import initial_population_generator
-from src.offspring_generator import offspring_generator
-from src.check_winner import check_winner
-from src.population_sorter import population_sorter
-from src.roulette_selection import roulette_selection
-from src.print_colors import print_colors
-from src.population_mixer import population_mixer
-from src.contants import MAX_TURNS
+from src.genetics.genes_generator import genes_generator
+from src.population.initial_population_generator import initial_population_generator
+from src.genetics.offspring_generator import offspring_generator
+from src.utils.check_winner import check_winner
+from src.population.population_sorter import population_sorter
+from src.genetics.roulette_selection import roulette_selection
+from src.utils.print_colors import print_colors
+from src.population.population_mixer import population_mixer
+from src.utils.constants import MAX_TURNS
 
 
 # --- Required for the average fitness chart ---
