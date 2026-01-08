@@ -3,7 +3,7 @@ from src.utils.check_fitness import check_fitness
 
 
 @pytest.mark.parametrize(
-    "peg_pattern,chosen_pegs,score",
+    "genes, secret_code, fitness_score",
     [
         (["Red", "Red", "Yellow", "Yellow"], ["Cyan", "Green", "Purple", "Orange"], 0),
         (["Red", "Green", "Yellow", "Cyan"], ["Red", "Green", "Yellow", "Cyan"], 40),
@@ -11,5 +11,5 @@ from src.utils.check_fitness import check_fitness
         (["Red", "Red", "Red", "Red"], ["Red", "Cyan", "Purple", "Purple"], 10),
     ],
 )
-def test_check_fitness(peg_pattern, chosen_pegs, score):
-    assert check_fitness(peg_pattern, chosen_pegs) == score
+def test_check_fitness(genes, secret_code, fitness_score):
+    assert check_fitness(genes, secret_code) == fitness_score

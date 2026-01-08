@@ -3,7 +3,7 @@ from src.population.fitness_rank_assigner import fitness_rank_assigner
 
 
 @pytest.mark.parametrize(
-    "individual, fitness_score, sorted_population, expected_sorted_population ",
+    "genes, fitness_score, ranked_population, expected_ranked_population ",
     [
         (
             ['Yellow', 'Purple', 'Orange', 'Yellow'],
@@ -92,9 +92,9 @@ from src.population.fitness_rank_assigner import fitness_rank_assigner
     ],
 )
 def test_fitness_rank_assigner(
-    individual, fitness_score, sorted_population, expected_sorted_population
+    genes, fitness_score, ranked_population, expected_ranked_population
 ):
     assert (
-        fitness_rank_assigner(individual, fitness_score, sorted_population)
-        == expected_sorted_population
+        fitness_rank_assigner(genes, fitness_score, ranked_population)
+        == expected_ranked_population
     )

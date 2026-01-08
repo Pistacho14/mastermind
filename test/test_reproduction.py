@@ -3,7 +3,7 @@ from src.genetics.reproduction import reproduction
 
 
 @pytest.mark.parametrize(
-    "father, mother, offspring, counter, expected_offspring",
+    "father, mother, offspring, child_id, expected_offspring",
     [
         (
             ["Red", "Red", "Yellow", "Yellow"],
@@ -27,5 +27,5 @@ from src.genetics.reproduction import reproduction
         ),
     ],
 )
-def test_reproduction(father, mother, offspring, counter, expected_offspring):
-    assert reproduction(father, mother, offspring, counter) == expected_offspring
+def test_reproduction(father, mother, offspring, child_id, expected_offspring):
+    assert reproduction(father, mother, offspring, child_id) == expected_offspring
