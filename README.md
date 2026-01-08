@@ -10,6 +10,7 @@ Mastermind
 - [Descripción técnica](#descripción-técnica)
     - [Diagrama de casos de uso](#diagrama-de-casos-de-uso)
     - [Arquitectura de la aplicación](#arquitectura-de-la-aplicación)
+    - [Diagrama de dependencias](#diagrama-de-dependencias)
 - [Diseño](#diseño)
     - [Módulos](#modulos)
 - [Implementación](#implementación)
@@ -114,6 +115,10 @@ A parte de la TDD la otra metodología utilizada fue el desarrollo en cascada, d
 ### Arquitectura de la aplicación
 
 ![arquitectura](/assets/arquitecture.png)
+
+### Diagrama de dependencias
+
+![diagrama de dependencias](/assets/diagramaDependencias.png)
 
 ## Diseño
 
