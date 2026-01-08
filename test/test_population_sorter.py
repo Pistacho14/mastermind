@@ -1,7 +1,7 @@
 import pytest
 from src.population.population_sorter import population_sorter
 
-dict1 = {
+current_population = {
     1: ["Red", "Green", "Yellow", "Cyan"],
     2: ["Purple", "Orange", "Red", "Green"],
     3: ["Yellow", "Yellow", "Cyan", "Purple"],
@@ -19,7 +19,7 @@ dict1 = {
     "population, secret_code, sorted_population",
     [
         (
-            dict1,
+            current_population,
             ["Green", "Red", "Purple", "Cyan"],
             {
                 "A": [],

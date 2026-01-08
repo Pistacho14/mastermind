@@ -9,6 +9,6 @@ from src.genetics.mutation import mutation
         ["Cyan", "Purple", "Orange", "Yellow"],
     ],
 )
-def test_mutation(individuo):
-    copia_individuo = individuo.copy()
-    assert mutation(individuo) != copia_individuo
+def test_mutation(genes):
+    original_genes_copy = genes.copy()
+    assert mutation(genes) != original_genes_copy
