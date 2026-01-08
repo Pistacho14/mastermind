@@ -3,7 +3,7 @@ from src.population.population_mixer import population_mixer
 
 
 @pytest.mark.parametrize(
-    "current_population, secret_code, offspring, length_population",
+    "current_population, secret_code, offspring, population_length",
     [
         (
             {
@@ -25,9 +25,9 @@ from src.population.population_mixer import population_mixer
     ],
 )
 def test_population_mixer(
-    current_population, secret_code, offspring, length_population
+    current_population, secret_code, offspring, population_length
 ):
     assert (
         len(population_mixer(current_population, secret_code, offspring))
-        == length_population
+        == population_length
     )

@@ -3,7 +3,7 @@ from src.utils.check_winner import check_winner
 
 
 @pytest.mark.parametrize(
-    "population, expected_return",
+    "current_population, expected_return",
     [
         (
             {
@@ -64,5 +64,5 @@ from src.utils.check_winner import check_winner
         ),
     ],
 )
-def test_check_winner(population, expected_return):
-    assert check_winner(population) == expected_return
+def test_check_winner(current_population, expected_return):
+    assert check_winner(current_population) == expected_return
