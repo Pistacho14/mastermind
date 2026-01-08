@@ -3,7 +3,7 @@ from src.population.population_mixer import population_mixer
 
 
 @pytest.mark.parametrize(
-    "current_population, secret_code, offspring, population_lenght",
+    "current_population, secret_code, offspring, population_length",
     [
         (
             {

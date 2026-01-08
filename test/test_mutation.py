@@ -3,7 +3,7 @@ from src.genetics.mutation import mutation
 
 
 @pytest.mark.parametrize(
-    "individuo",
+    "genes",
     [
         ["Red", "Red", "Yellow", "Yellow"],
         ["Cyan", "Purple", "Orange", "Yellow"],
