@@ -59,14 +59,6 @@ Inicia el entorno virtual:
 
 `source venv/bin/activate`
 
-Una vez completados estos pasos inicia el script:
-
-`uv run .\benchmark.py`
-
-o bien:
-
-`uv run .\benchmark.py`
-
 ### Windows
 
 Para instalar los requisitos en Windows sigue los siguientes pasos:
