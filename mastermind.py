@@ -53,7 +53,7 @@ def mastermind():
 
         for rank in ["A", "B", "C", "D", "E", "F", "G", "H"]:
             if ranked_population[rank]:
-                print(f"Turn {turn + 1}: ", end="")
+                print(f"Turn {turn + 1}:   ", end="")
                 print_colors(ranked_population[rank][0])
                 break
 
