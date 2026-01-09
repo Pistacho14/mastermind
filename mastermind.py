@@ -78,7 +78,7 @@ def mastermind():
     print_colors(secret_code)
 
     # --- Required for the average fitness chart ---
-    return fitness_history
+    return MAX_TURNS + 1, fitness_history
     # -------------------------------------------------
 
 
