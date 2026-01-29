@@ -23,7 +23,7 @@ Mastermind
 - [Conclusiones](#conclusiones)
 
 ## Introducción
-Este proyecto ha sido creado por [**Xián Morales**](https://github.com/MetalAsugom) y [**Pablo González**](https://github.com/Pistacho14), dos alumnos del ciclo de 1º de DAM en centro escolar [**IES de Teis**](https://www.edu.xunta.gal/centros/iesteis/). Este software crea generaciones de individuos con el objetivo de solucionar el código secreto del juego [**Mastermind**](https://en.wikipedia.org/wiki/Mastermind_(board_game)), que consiste en tratar de adivinar un código secreto compuesto por 4 bolas de colores (a elegir entre 6) mientras un jugador trata de adivinarlo en un máximo de 14 intentos.
+Este proyecto ha sido creado por [**Xián Morales**](https://github.com/MetalAsugom) y [**Pablo González**](https://github.com/Pistacho14), dos alumnos del ciclo de 1º de DAM en centro escolar [**IES de Teis**](https://www.edu.xunta.gal/centros/iesteis/). Este software crea generaciones de individuos con el objetivo de solucionar un código secreto creado con las reglas del juego [**Mastermind**](https://en.wikipedia.org/wiki/Mastermind_(board_game)), que consiste en tratar de adivinar un código secreto compuesto por 4 bolas de colores (a elegir entre 6 o mas) mientras un jugador trata de adivinarlo en un máximo de 14 intentos. En este caso el jugador es reemplazado por el algoritmo genético.
 
 ## Manual
 ### Requisitos
@@ -94,7 +94,7 @@ o bien:
 
 ## Metodología
 
-Este software se ha desarrollado utilizando [TDD](https://en.wikipedia.org/wiki/Test-driven_development) (Test Driven Development) que se basa en el uso de casos test para desarrollar los módulos y así minimizar los errores que se introducen en el código. El uso de este método de desarrollo nos ayudó a crear los módulos de forma mas eficiente a pesar de que en algunos de ellos no era posible la implementación debido a la naturaleza aleatoria de dichos scripts.
+Este software se ha desarrollado utilizando [TDD](https://en.wikipedia.org/wiki/Test-driven_development) (Test Driven Development) que se basa en el uso de casos test para desarrollar los módulos y así minimizar los defectos introducidos en el código. El uso de este método de desarrollo nos ayudó a crear los módulos de forma mas eficiente a pesar de que en algunos de ellos no era posible la implementación debido a su naturaleza aleatoria.
 
 A parte de la TDD la otra metodología utilizada fue el desarrollo en cascada, desarrollando los módulos nuevos de forma lineal y en el orden en el que eran necesarios para la evolución del software. Al principio pensamos en intentar adoptar una metodología prototipada pero creímos que no encajaba en este proyecto ya que el prototipo sería practicamente idéntico al producto final.
 
@@ -104,9 +104,16 @@ A parte de la TDD la otra metodología utilizada fue el desarrollo en cascada, d
 
 ![diagrama de casos de uso](/assets/useCases.jpg)
 
+- **Ajustar parámetros:** el usuario puede ajustar los parámetros en la el archivo constants.py para modificar el comportamiento del software.
+- **Iniciar el software:** el usuario puede iniciar el software siguiendo los pasos descritos en el apartado uso.
+- **Ver el resultado:** el usuario puede comprobar el resultado y los intentos en la consola.
+- **Analizar las gráficas:** el usuario puede lanzar benchmark y analizar las gráficas para analizar el rendimiento de su configuración.
+
 ### Arquitectura de la aplicación
 
 ![arquitectura](/assets/arquitecture.png)
+
+El programa consiste de un gran módulo central mastermind, el cual llama a casi todas las demás funciones. El otro componente a destacar es constants que utilizamos para almacenar las constantes. Esto se hizo con el propósito de poder cambiar con facilidad los parámetros mas importantes y hacer el software mas facilmente configurable para el usuario o desarrollador.
 
 ### Diagrama de dependencias
 
@@ -150,14 +157,15 @@ Terminamos por decantarnos por la reproducción sexual mixta mediante selección
 ## Implementación
 
 En este proyecto se ha usado:
-- [Python](https://www.python.org)
+- [Python](https://www.python.org): Lenguaje utilizado para el software.
 - [Pytest](https://docs.pytest.org/en/stable/#): Utilizado para hacer los casos test.
 - [Matplotlib](https://matplotlib.org/): Utilizado para crear las gráficas.
 - [Random](https://docs.python.org/3/library/random.html): Utilizado en la generación de genes, las mutaciones de alelos, la selección de los padres y las ruletas ponderadas.
-- [Git](https://git-scm.com/)
-- [Markdown](https://www.markdownguide.org/)
+- [Git](https://git-scm.com/): Control de versiones
+- [Markdown](https://www.markdownguide.org/): Lenguaje usado en la documentación.
+- [Ruff](https://docs.astral.sh/ruff/): Formateo del código.
 
-### Uso-de-IA
+### Uso de IA
 
 - [ChatGPT](https://chatgpt.com/): Utilizado para proporcionar ejemplos de pseudo código, explicar concepto de genética y pedir ideas a la hora de refactorizar el código. Se usó para crear el archivo benchmark y print_colors.
 - [Copilot](https://copilot.microsoft.com/): Utilizado para resolver dudas de código y problemas de ruta a la hora de hacer debugging.
@@ -168,7 +176,7 @@ Los fragmentos de código utilizados no se implementaron sin previamente saber q
 
 ### Casos test
 
-Se hicieron casos test para todas las funciones. Actualmente algunos casos test no pasan, pero se comprobaron y testearon antes de añadir los elementos aleatorios.
+Se hicieron casos test para todas las funciones. Actualmente algunos casos test no pasan debido a la inclusión de funciones con componentes aleatorios, pero se comprobaron y testearon antes de añadir dichos elementos.
 
 ### Coverage
 
@@ -180,12 +188,17 @@ Se ha invertido en el proyecto al rededor de 42 horas de trabajo sumando el resu
 ![wakatime1](/assets/wakatimeXian.png)
 
 ![wakatime2](/assets/wakatimePablo.png)
+
 Este tiempo se invirtió en diferentes funciones (programación, documentación, debugging...) y el trabajo a lo largo del tiempo fue bastante dispar debido a las navidades, ya que a mayores de ser fechas concurridas en cuanto a eventos sociales estábamos un poco quemados de la rutina escolar así que decidimos tomarnos un descanso y retomarlo la semana previa a la entrega.
+
+A pesar de ello, el proyecto se alargó algo mas de lo que estaba planeado en un inicio ya que las primeras iteraciones del software funcionaban con un módulo ruleta diferente al actual que daba muchos problemas y proporcionaba peores resultados.
 
 ### Posibles mejoras
 
-Tenemos pensado añadir precondiciones y postcondiciones a las funciones. Mejorar el rendimiento del código para cuando se lanzan las 100 ejecuciones para agilizarlo. Añadir markers a los casos test para poder hacer testing de manera independiente.
+Entre las posibles mejoras para este software consideramos añadir precondiciones y postcondiciones a las funciones para tener una barricada. Mejorar el rendimiento del código para agilizar la ejecución de la función benchmark. Por último también queremos añadir markers a los casos test para poder hacer testing de manera independiente.
 
 ## Conclusiones
 
-Este proyecto ha sido una iniciación de lo mas interesante al mundo de los algoritmos reproductivos y aunque hemos tenido que pelearnos bastante con la lógica, estamos muy contentos con el resultado final. Creemos que ajustando ciertas variables numéricas como los pesos, la probabilidad de mutación o la cantidad de la población que se reproduce frente a la que continua se podría optimizar la media de turnos que lleva encontrar el código secreto.
+Este proyecto ha sido una iniciación de lo mas interesante al mundo de los algoritmos reproductivos y aunque hemos tenido que pelearnos bastante con la lógica, estamos muy contentos con el resultado final.
+
+ Creemos que ajustando ciertas variables numéricas como los pesos, la probabilidad de mutación o la cantidad de la población que se reproduce frente a la que continua se podría optimizar la media de turnos que lleva encontrar el código secreto.
